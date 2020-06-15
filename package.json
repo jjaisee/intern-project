@@ -14,5 +14,13 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.17",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjaisee/intern-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjaisee/intern-project/issues"
+  },
+  "homepage": "https://github.com/jjaisee/intern-project#readme"
 }
