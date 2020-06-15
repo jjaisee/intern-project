@@ -16,7 +16,12 @@ body{
 .navbar-brand-logo{
   width: 15rem;
 }
+.button-login-popup{
 
+}
+.button-signup-navbar{
+  margin-left: 1%;
+}
 /* sign Up */
 .signup-popup{
     width: 100%;
@@ -27,7 +32,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
+    z-index: 2000;
     display: none;
 }
 .signup-popup-content{
@@ -325,7 +330,7 @@ padding-left: 5%;
 
 
 .event-nearby-container{
-  padding: 2% 6.5% 2% 5%;
+  padding: 2% 6.5% 2% 4%;
 }
 .event-container-heading{
   margin-left: 6%;
