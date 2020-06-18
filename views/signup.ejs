@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+
+<div class="signup-popup-2">
+  <div class="signup-popup-content popup-content">
+    <h3 class="signup-heading">Create your account</h3>
+    <form class="" action="/signup" method="post">
+      <div class="form-group">
+        <input class="form-control" type="text" name="name" value="" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="email" name="username" value="" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="password" value="" placeholder="Password">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input " id="">
+        <label class="form-check-label signup-checkbox-text" for="exampleCheck1">By signing up, you agree to LetzGet2gether's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy.</a></label>
+      </div>
+      <button type="submit" name="button" class="signup-popup-button-email btn btn-info btn-block">Get started</button>
+    </form>
+  </div>
+</div>
+
+
+<%- include("partials/footer"); -%>

@@ -23,7 +23,7 @@
 
   <!-- Nav Bar -->
   <nav id="navbar-signup" class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-sm">
-    <a class="navbar-brand" href=""> <img class="navbar-brand-logo" src="images/logo1.png" alt="logo"> </a>
+    <a class="navbar-brand" href="/"> <img class="navbar-brand-logo" src="images/logo1.png" alt="logo"> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,13 +48,38 @@
     </div>
   </nav>
   <div class="signup-popup">
-    <div class="signup-popup-content">
+    <div class="popup-content">
       <div class="close">+</div>
       <h3 class="signup-heading">Sign Up</h3>
-      <button type="button" class="signup-popup-button btn btn-outline-secondary btn-block"><img src="images/img-google.png" class="signup-icon" alt="">Continue with Google</button>
-      <button type="button" class="signup-popup-button btn btn-outline-secondary btn-block"> <img src="images/img-facebook.png" class="signup-icon" alt="">Continue with Facebook</button>
+      <a href="/auth/google" role="button" class="signup-popup-button btn btn-outline-secondary btn-block"><img src="images/img-google.png" class="signup-icon" alt="">Continue with Google</a>
+      <a href="" role="button" class="signup-popup-button btn btn-outline-secondary btn-block"> <img src="images/img-facebook.png" class="signup-icon" alt="">Continue with Facebook</a>
       <p class="signup-seperator-line"> <span class="signup-seperator-line-text">OR</span></p>
-      <button type="button" class="signup-popup-button-email btn btn-info btn-block">Sign up with Email</button>
-      <p class="signup-seperator-line-text">Already signed up? <a href="#">Log in</a></p>
+      <button id="signup-with-email" type="button" class="temp-z signup-popup-button-email btn btn-info btn-block ">Sign up with Email</button>
+      <p class="signup-seperator-line-text">Already signed up? <a href="#" class="button-login-popup">Log in</a></p>
+    </div>
+  </div>
+
+
+
+
+  <div class="login-popup">
+    <div class="popup-content">
+      <div class="close">+</div>
+      <h3 class="signup-heading">Log in</h3>
+      <a href="/auth/google" role="button" class="signup-popup-button btn btn-outline-secondary btn-block"><img src="images/img-google.png" class="signup-icon" alt="">Continue with Google</a>
+      <a href="" role="button" class="signup-popup-button btn btn-outline-secondary btn-block"> <img src="images/img-facebook.png" class="signup-icon" alt="">Continue with Facebook</a>
+      <p class="signup-seperator-line"> <span class="signup-seperator-line-text">OR</span></p>
+      <form class="" action="/header" method="post">
+        <div class="form-group">
+          <input class="form-control" type="email" name="username" value="" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" name="password" value="" placeholder="Password">
+        </div>
+
+        <button type="submit" name="button" class="signup-popup-button-email btn btn-info btn-block">Log in</button>
+      </form>
+      <p class="signup-seperator-line-text"><a href="#" style="color:#3f3f3f; text-decoration: underline;">Forget password?</a></p>
+      <p class="signup-seperator-line-text">Not joined us yet? <a href="#" class="button-signup-popup">Sign up</a></p>
     </div>
   </div>
