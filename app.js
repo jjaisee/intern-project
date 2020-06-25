@@ -7,15 +7,15 @@ var path = require('path')
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
+// const LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
-
+const flash = require('connect-flash');
 
 
 const categoriesImg = ["outdoorAndAdventure", "music", "writing", "friendsAndFamily", "languageAndCulture", "film", "learning", "social", "healthAndWellness", "maritalConsulting","dance", "foodAndDrink","photography","beliefs","sci-fiAndGames","artAndCraft","bookClubs","pets","fashionAndBeauty","career","sportsAndFitness","technology"];
 const categoriesTitle = ["Letz Hike", "Letz Create Music", "Letz Writing", "Friends & Family", "Language & Culture", "Letz Film", "Letz Learning", "Letz Connect", "Health & Wellness", "Letz Find Maritial Counselors", "Letz Dance", "Letz Cook","Letz Click","Beliefs","Sci-Fi & Games","Letz Draw","Book Clubs","Pets","Letz Fashion","Career","Sports & Fitness","Technology"];
-
 
 const app = express();
 
@@ -29,6 +29,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -50,6 +51,16 @@ const User = new mongoose.model("User",userSchema);
 
  passport.use(User.createStrategy());
 
+ // passport.use(new LocalStrategy(userSchema,
+ //   function(username, password, done) {
+ //     User.findOne({ username: username }, function (err, user) {
+ //       if (err) { return done(err); }
+ //       if (!user) { return done(null, false); }
+ //       if (!user.verifyPassword(password)) { return done(null, false); }
+ //       return done(null, user);
+ //     });
+ //   }
+ // ));
 
 
 
@@ -79,12 +90,14 @@ passport.use(new GoogleStrategy({
 
 app.get("/",function(req,res){
   if(req.isAuthenticated()){
-    res.render("user-home");
+    res.render("user-home",{
+      categoriesImg : categoriesImg,
+      categoriesTitle: categoriesTitle,
+    });
   } else{
-
     res.render("home",{
       categoriesImg : categoriesImg,
-      categoriesTitle: categoriesTitle
+      categoriesTitle: categoriesTitle,
     });
 
   }
@@ -113,7 +126,10 @@ app.get("/about",function(req,res){
 });
 app.get("/user-home",function(req,res){
   if(req.isAuthenticated()){
-    res.render("user-home");
+    res.render("user-home",{
+      categoriesImg : categoriesImg,
+      categoriesTitle: categoriesTitle,
+    });
   } else{
     res.redirect("/");
   }
@@ -129,7 +145,7 @@ app.get("/logout",function(req,res){
 
 app.post("/signup",function(req,res){
 
-  User.register({username:req.body.username}, req.body.password, function(err,user){
+  User.register({username:req.body.username, name: req.body.name}, req.body.password, function(err,user){
     if(err){
       console.log(err);
       res.redirect("/signup");
@@ -152,13 +168,17 @@ app.post("/header",function(req,res){
       res.redirect("/");
       console.log(err);
     } else{
-      passport.authenticate("local",{failureFlash: "Invalid username or password." })(req,res,function(){
+      passport.authenticate("local",{failureFlash: true,failureFlash: "Invalid username or password.", failureRedirect: "/"})(req,res,function(){
         res.redirect("/user-home");
       });
     }
   });
 
 });
+app.get("/start-group",function(req,res){
+  res.render("start-group");
+});
+
 
 
 app.listen(3000,function(){

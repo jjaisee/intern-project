@@ -1,3 +1,6 @@
+const year = new Date().getFullYear();
+$("#year").text(year);
+
 document.getElementById("signup-with-email").onclick = function () {
         location.href = "/signup";
     };

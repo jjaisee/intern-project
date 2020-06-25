@@ -4,9 +4,9 @@
 
 <div class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active aaaa">
-      <img class="d-block w-100 home-carousel" src="images/sailing.jpg" alt="First slide">
-      <div class="carousel-caption d-none d-md-block aaaa">
+    <div class="carousel-item active ">
+      <img class="d-block w-100 event-carousel" src="images/sailing.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block event-over-img-text">
         <h5 class="event-page-event-time-heading">1 August at 08:00 - 13:00</h5>
         <h1 class="event-page-heading">SAILING PRACTICE</h1>
         <div class="event-countdown">
@@ -21,20 +21,41 @@
   </div>
 </div>
 
-<div class="search-header">
-    <form class="" action="index.html" method="post">
-        <div class="row search-form-box">
-            <div class="col-lg-6 col-md-6 search-box-items">
-                <input class="search-field events" type="text" name="search" value="" placeholder="Events, groups etc">
+<section id="search-sec">
+  <div class="search-sec">
+    <div class="container">
+        <form action="#" method="post" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+                            <input type="text" class="form-control search-slt" placeholder="Search by events, groups etc">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-slt" placeholder="Location">
+                        </div>
+                        <!-- <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <select class="form-control search-slt" id="exampleFormControlSelect1">
+                                <option>Select Vehicle</option>
+                                <option>Example one</option>
+                                <option>Example one</option>
+                                <option>Example one</option>
+                                <option>Example one</option>
+                                <option>Example one</option>
+                                <option>Example one</option>
+                            </select>
+                        </div> -->
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <button type="button" class="btn btn-info wrn-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-3 search-box-items">
-                <input class="search-field location" type="text" name="location" value="" placeholder="Location"> </div>
-            <div class="col-lg-3 col-md-3 search-box-items">
-                <button class="search-btn" type="button" name="button"><i class="fas fa-search"></i> Search</button>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+  </div>
+
+</section>
 
 
 
@@ -244,6 +265,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- for CountDown -->
   <script type="text/javascript">
