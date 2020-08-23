@@ -13,6 +13,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 const flash = require('connect-flash');
 
+const adminRouter = require('./routes/adminRouters');
 
 const categoriesImg = ["outdoorAndAdventure", "music", "writing", "friendsAndFamily", "languageAndCulture", "film", "learning", "social", "healthAndWellness", "maritalConsulting","dance", "foodAndDrink","photography","beliefs","sci-fiAndGames","artAndCraft","bookClubs","pets","fashionAndBeauty","career","sportsAndFitness","technology"];
 const categoriesTitle = ["Letz Hike", "Letz Create Music", "Letz Writing", "Friends & Family", "Language & Culture", "Letz Film", "Letz Learning", "Letz Connect", "Health & Wellness", "Letz Find Maritial Counselors", "Letz Dance", "Letz Cook","Letz Click","Beliefs","Sci-Fi & Games","Letz Draw","Book Clubs","Pets","Letz Fashion","Career","Sports & Fitness","Technology"];
@@ -33,7 +34,20 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser: true, useUnifiedTopology: true});
+const DB = process.env.DATABASE.replace(
+  'PASSWORD',
+  process.env.DATABASE_PASSWORD
+);
+
+mongoose.connect(DB,{
+  useNewUrlParser:true,
+  useCreateIndex:true,
+  useFindAndModify:false,
+  useUnifiedTopology:true
+})
+.then(() => {
+  console.log('DB connections sucessfull');
+});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -88,6 +102,7 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+app.use('/admin',adminRouter);
 app.get("/",function(req,res){
   if(req.isAuthenticated()){
     res.render("user-home",{
@@ -124,6 +139,13 @@ app.get("/contactus",function(req,res){
 app.get("/about",function(req,res){
   res.render("about");
 });
+app.get("/events-view",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("events-view-login");
+  } else{
+    res.render("events-view");
+  }
+});
 app.get("/user-home",function(req,res){
   if(req.isAuthenticated()){
     res.render("user-home",{
@@ -133,6 +155,52 @@ app.get("/user-home",function(req,res){
   } else{
     res.redirect("/");
   }
+});
+app.get("/user-liked-events",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("user-liked-events");
+  } else{
+    res.redirect("/");
+  }
+});
+app.get("/user-joined-group",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("user-joined-group");
+  } else{
+    res.redirect("/");
+  }
+});
+app.get("/user-categories",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("user-categories",{
+      categoriesImg : categoriesImg,
+      categoriesTitle: categoriesTitle,
+    });
+  } else{
+    res.redirect("/");
+  }
+});
+app.get("/user-joined-events",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("user-joined-events");
+  } else{
+    res.redirect("/");
+  }
+});
+app.get("/setting-profile",function(req,res){
+  res.render("profile");
+});
+app.get("/setting-privacy",function(req,res){
+  res.render("setting-privacy");
+});
+app.get("/setting-organizer-subscription",function(req,res){
+  res.render("setting-organizer-subscription");
+});
+app.get("/setting-payment-methods",function(req,res){
+  res.render("setting-payment-methods");
+});
+app.get("/setting-payment-made",function(req,res){
+  res.render("setting-payment-made");
 });
 app.get("/signup",function(req,res){
   res.render("signup");
@@ -181,6 +249,7 @@ app.get("/start-group",function(req,res){
 
 
 
-app.listen(3000,function(){
-  console.log("Server running on port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () =>{
+  console.log('App running on port '+port+'...')
 });

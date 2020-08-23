@@ -1,0 +1,88 @@
+<%- include("partials/user-home-header"); -%>
+
+<section id="user-home">
+  <div class="fluid-container user-home-container">
+
+    <div class="col-10 user-home-container-right">
+      <section class="upcoming-joined-event">
+        <div class="upcoming-joined-event-content">
+          <h1><i class="far fa-calendar-alt"></i> Upcoming Get2gether</h1>
+          <hr>
+          <p>4:30 PM   MONDAY, JULY 6, 2020</p>
+          <h3>Automatic writing , communication with the spirit world</h3>
+          <h5>SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h5>
+          <p>8 Members going</p>
+        </div>
+      </section>
+      <section id="liked-event">
+        <div class="liked-event-by-date">
+          <h6 class="event-date">MONDAY, JULY 6</h6>
+          <div class="bg-success shadow-sm joined-event">
+            <div class="liked-event row ">
+              <div class="col-3 liked-event-first-child">
+                <img src="images/event2.jpg" alt="">
+              </div>
+              <div class="col-9 liked-event-text">
+                <p class="liked-event-p">4:30 PM</p>
+                <div class="liked-event-reactionBar">
+                  <%- include("partials/reactionBar"); -%>
+                </div>
+                <h5 class="liked-event-name">Automatic writing , communication with the spirit world</h5>
+                <h6 class="liked-event-group">SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h6>
+                <p class="liked-event-p">8 Members going</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-success shadow-sm joined-event">
+            <div class="liked-event row ">
+              <div class="col-3 liked-event-first-child">
+                <img src="images/event2.jpg" alt="">
+              </div>
+              <div class="col-9 liked-event-text">
+                <p class="liked-event-p">7:30 PM</p>
+                <div class="liked-event-reactionBar">
+                  <%- include("partials/reactionBar"); -%>
+                </div>
+                <h5 class="liked-event-name">Automatic writing , communication with the spirit world</h5>
+                <h6 class="liked-event-group">SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h6>
+                <p class="liked-event-p">8 Members going</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="liked-event-by-date">
+          <h6 class="event-date">Tuesday, JULY 7</h6>
+          <div class="bg-success shadow-sm joined-event">
+            <div class="liked-event row ">
+              <div class="col-3 liked-event-first-child">
+                <img src="images/event2.jpg" alt="">
+              </div>
+              <div class="col-9 liked-event-text">
+                <p class="liked-event-p">7:30 PM</p>
+                <div class="liked-event-reactionBar">
+                  <%- include("partials/reactionBar"); -%>
+                </div>
+                <h5 class="liked-event-name">Automatic writing , communication with the spirit world</h5>
+                <h6 class="liked-event-group">SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h6>
+                <p class="liked-event-p">8 Members going</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </section>
+
+      <%- include("partials/footer"); -%>
+    </div>
+    <div class="col-2 sticky-sidebar">
+      <a href="/user-home" type="button" class="user-home-left-btn btn btn-light btn-block">Upcoming Events</a>
+      <a href="/user-categories" type="button" class="user-home-left-btn user-home-left-btn btn btn-light btn-block">Categories</a>
+      <a href="/user-liked-events" type="button" class="user-home-left-btn btn btn-light btn-block">Liked Events</a>
+      <a href="/user-joined-group" type="button" class="user-home-left-btn btn btn-light btn-block">Joined Group</a>
+      <a href="/user-joined-events" type="button" class="user-home-left-btn user-home-left-btn-active btn btn-light btn-block">Joined Events</a>
+      <a href="#" type="button" class="user-home-left-btn btn btn-light btn-block">Your Group</a>
+    </div>
+  </div>
+</section>

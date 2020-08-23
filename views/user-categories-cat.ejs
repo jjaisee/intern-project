@@ -1,0 +1,113 @@
+<%- include("partials/user-home-header"); -%>
+
+<section id="user-home">
+  <div class="fluid-container user-home-container">
+
+    <div class="col-10 user-home-container-right">
+      <section class=" search-user-category search-sec-user shadow">
+        <div class="container">
+          <form action="#" method="post" novalidate="novalidate">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+                    <input type="text" class="form-control search-slt" placeholder="Search by events, groups etc">
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                    <input type="text" class="form-control search-slt" placeholder="Location">
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                    <button type="button" class="btn btn-info wrn-btn">Search</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!-- Button for category dropdown-->
+      <div class="btn-group user-category-dropdown">
+        <button type="button" class="btn btn-outline-info btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Letz Hike</a>
+          <a class="dropdown-item" href="#">Letz Dance</a>
+          <a class="dropdown-item" href="#">Letz Cook</a>
+          <a class="dropdown-item" href="#">Letz Learn</a>
+          <a class="dropdown-item" href="#">Letz Create Music</a>
+          <a class="dropdown-item" href="#">Letz Click</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Others</a>
+        </div>
+      </div>
+      <hr>
+      <section id="liked-event">
+        <h1 class="user-category-heading">Letz Write</h1>
+        <div class="liked-event-by-date">
+          <h6 class="event-date">MONDAY, JULY 6</h6>
+          <div class="liked-event row shadow-sm">
+            <a href="#" class="joining-btn btn btn-danger">Join</a>
+            <div class="col-3 liked-event-first-child">
+              <img src="images/event2.jpg" alt="">
+            </div>
+            <div class="col-9 liked-event-text">
+              <p class="liked-event-p">7:30 PM</p>
+              <div class="liked-event-reactionBar">
+                <%- include("partials/reactionBar"); -%>
+              </div>
+              <h5 class="liked-event-name">Automatic writing , communication with the spirit world</h5>
+              <h6 class="liked-event-group">SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h6>
+              <p class="liked-event-p">8 Members going</p>
+            </div>
+          </div>
+          <div class="liked-event row shadow-sm">
+            <a href="#" class="joining-btn btn btn-danger">Join</a>
+            <div class="col-3 liked-event-first-child">
+              <img src="images/event2.jpg" alt="">
+            </div>
+            <div class="col-9 liked-event-text">
+              <p class="liked-event-p">7:30 PM</p>
+              <div class="liked-event-reactionBar">
+                <%- include("partials/reactionBar"); -%>
+              </div>
+              <h5 class="liked-event-name">Automatic writing , communication with the spirit world</h5>
+              <h6 class="liked-event-group">SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h6>
+              <p class="liked-event-p">8 Members going</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="liked-event-by-date">
+          <h6 class="event-date">Tuesday, JULY 7</h6>
+          <div class="liked-event row shadow-sm">
+            <a href="#" class="joining-btn btn btn-danger">Join</a>
+            <div class="col-3 liked-event-first-child">
+              <img src="images/event2.jpg" alt="">
+            </div>
+            <div class="col-9 liked-event-text">
+              <p class="liked-event-p">7:30 PM</p>
+              <div class="liked-event-reactionBar">
+                <%- include("partials/reactionBar"); -%>
+              </div>
+              <h5 class="liked-event-name">Automatic writing , communication with the spirit world</h5>
+              <h6 class="liked-event-group">SPIRITUAL AUTOMATIC WRITING AND MEDIUMSHIP, MUMBAI, INDIA</h6>
+              <p class="liked-event-p">8 Members going</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </section>
+
+      <%- include("partials/footer"); -%>
+    </div>
+    <div class="col-2 sticky-sidebar">
+      <a href="" type="button" class="user-home-left-btn btn btn-light btn-block">Upcoming Events</a>
+      <a href="" type="button" class="user-home-left-btn user-home-left-btn-active btn btn-light btn-block">Categories</a>
+      <a href="" type="button" class="user-home-left-btn btn btn-light btn-block">Liked Events</a>
+      <a href="" type="button" class="user-home-left-btn btn btn-light btn-block">Joined Group</a>
+      <a href="" type="button" class="user-home-left-btn btn btn-light btn-block">Joined Events</a>
+      <a href="" type="button" class="user-home-left-btn btn btn-light btn-block">Your Group</a>
+    </div>
+  </div>
+</section>

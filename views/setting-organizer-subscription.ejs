@@ -1,0 +1,28 @@
+<%- include("partials/user-home-header"); -%>
+
+<section id="user-home">
+  <div class="fluid-container user-home-container">
+
+    <div class="col-10 user-home-container-right">
+      <section class="profile">
+        <div class="general">
+          <h3 class="setting-type-heading">Organizer Subscription</h3>
+          <hr>
+          <div class="setting-subscription">
+            <h6 class="setting-privacy-subheading">You currently don’t have a subscription</h6><br>
+            <p>Organizer subscriptions let you organize your groups and pay on a monthly or 6-month basis.<br>Want to start your own get2gether ?</p>
+            <a href="#" class="btn btn-danger">Create Group</a>
+          </div>
+        </div>
+      </section>
+      <%- include("partials/footer"); -%>
+    </div>
+    <div class="col-2 sticky-sidebar">
+      <a href="/setting-profile" type="button" class="user-home-left-btn btn btn-light btn-block">Profile</a>
+      <a href="/setting-privacy" type="button" class="user-home-left-btn  btn btn-light btn-block">Privacy</a>
+      <a href="/setting-organizer-subscription" type="button" class="user-home-left-btn user-home-left-btn-active btn btn-light btn-block">Organizer Subscription</a>
+      <a href="/setting-payment-methods" type="button" class="user-home-left-btn btn btn-light btn-block">Payment Methods</a>
+      <a href="/setting-payment-made" type="button" class="user-home-left-btn btn btn-light btn-block">Payment Made</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<%- include("partials/user-home-header"); -%>
+
+<section id="user-home">
+  <div class="fluid-container user-home-container">
+
+    <div class="col-10 user-home-container-right">
+      <div class="general">
+        <h3 class="setting-type-heading">Privacy</h3>
+        <p>Control who can contact you and the information others can see on your public profile.</p>
+        <br>
+        <div class="d-flex">
+          <div class="p-2">Flex item 1</div>
+          <div class="p-2">Flex item 2</div>
+        </div>
+        <hr>
+      </div>
+      <section>
+
+      </section>
+      <%- include("partials/footer"); -%>
+    </div>
+    <div class="col-2 sticky-sidebar">
+      <a href="/setting-profile" type="button" class="user-home-left-btn btn btn-light btn-block">Profile</a>
+      <a href="/setting-privacy" type="button" class="user-home-left-btn  btn btn-light btn-block">Privacy</a>
+      <a href="/setting-organizer-subscription" type="button" class="user-home-left-btn btn btn-light btn-block">Organizer Subscription</a>
+      <a href="/setting-payment-methods" type="button" class="user-home-left-btn btn btn-light btn-block">Payment Methods</a>
+      <a href="/setting-payment-made" type="button" class="user-home-left-btn user-home-left-btn-active btn btn-light btn-block">Payment Made</a>
+    </div>
+  </div>
+</section>
